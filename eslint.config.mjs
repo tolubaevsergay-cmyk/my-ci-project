@@ -2,14 +2,17 @@ import js from "@eslint/js";
 import globals from "globals";
 
 export default [
+  js.configs.recommended,
   {
     files: ["**/*.js"],
-    plugins: { js },
-    extends: ["js/recommended"],
     languageOptions: {
       globals: {
         ...globals.node,
+        ...globals.jest,
       },
+    },
+    rules: {
+      // при необходимости добавьте правила
     },
   },
 ];
